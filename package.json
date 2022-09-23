@@ -2,9 +2,11 @@
   "name": "blog_nodejs",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
+  "http.proxySupport": "off",
   "scripts": {
-    "start": "nodemon --inspect index.js",
+    "start": "nodemon --inspect src/index.js",
+    "watch": "sass --watch src/resources/scss/app.scss src/public/css/app.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,10 +24,14 @@
   },
   "homepage": "https://github.com/David-DTA/blog_nodejs#readme",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6"
   },
   "devDependencies": {
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.20"
+    "node-sass": "^7.0.3",
+    "nodemon": "^2.0.20",
+    "sass": "^1.55.0",
+    "script": "^0.1.4"
   }
 }
