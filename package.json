@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "http.proxySupport": "off",
   "scripts": {
+    "beautiful": "lint-staged",
     "start": "nodemon --inspect src/index.js",
     "watch": "sass --watch src/resources/scss/app.scss src/public/css/app.css",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,14 +24,25 @@
     "url": "https://github.com/David-DTA/blog_nodejs/issues"
   },
   "homepage": "https://github.com/David-DTA/blog_nodejs#readme",
+  "lint-staged":{
+    "src/**/*.{js,json,scss}": "prettier --single-quote --tab-width 4 --trailing-comma all --write"
+  },
+  "husky":{
+    "hooks":{
+      "pre-commit": "list-staged"
+    }
+  },
   "dependencies": {
     "express": "^4.18.1",
     "express-handlebars": "^6.0.6"
   },
   "devDependencies": {
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "morgan": "^1.10.0",
     "node-sass": "^7.0.3",
     "nodemon": "^2.0.20",
+    "prettier": "^2.7.1",
     "sass": "^1.55.0",
     "script": "^0.1.4"
   }
